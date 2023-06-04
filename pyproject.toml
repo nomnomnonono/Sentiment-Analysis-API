@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "sentiment-analysis"
+version = "0.1.0"
+description = ""
+authors = ["nomnomnonono <nozomu.koujiguchi1204@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+sentence-transformers = "^2.2.2"
+fastapi = "^0.96.0"
+uvicorn = {extras = ["standard"], version = "^0.22.0"}
+pydantic = "^1.10.8"
+mangum = "^0.17.0"
+
+[tool.poetry.dev-dependencies]
+pysen = {version = "^0.10.3", extras = ["lint"]}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pysen]
+version = "0.10.3"
+
+[tool.pysen.lint]
+enable_black = true
+enable_flake8 = true
+enable_isort = true
+enable_mypy = false
+mypy_preset = "strict"
+line_length = 88
+py_version = "py39"
+
+[[tool.pysen.lint.mypy_targets]]
+paths = ["."]
